@@ -172,7 +172,7 @@
     <!-- Modal for Cart Preview -->
     <div
       id="cart-modal"
-      class="fixed inset-0 bg-gray-500 bg-opacity-75 flex justify-center items-center z-50 hidden"
+      class="fixed inset-0 bg-gray-500 bg-opacity-75 justify-center items-center z-50 hidden"
     >
       <div class="bg-white p-6 rounded-lg shadow-lg w-96 md:w-2/3 lg:w-1/2">
         <h2 class="text-xl font-bold text-gray-800">Your Cart</h2>
@@ -192,6 +192,14 @@
             <tbody id="cart-items">
               <!-- Cart items will go here dynamically -->
             </tbody>
+
+            <tfoot class="totalCounts">
+              <td class="py-2 px-4 font-bold">Total</td>
+              <td class="py-2 px-4"></td>
+              <td class="py-2 px-4"></td>
+              <td class="py-2 px-4 font-bold" id="totalQuantity"></td>
+              <td class="py-2 px-4 font-bold" id="totalPrice"></td>
+            </tfoot>
           </table>
         </div>
 
