@@ -19,6 +19,8 @@
 //   });
 // }
 
+
+//Color Buttons 
 const ringButtons = document.querySelectorAll(".ring-button");
 
 for (let i = 0; i < ringButtons.length; i++){
@@ -40,6 +42,7 @@ for (let i = 0; i < ringButtons.length; i++){
   })
 }
 
+//Wrist Size 
 function selectWristSize(size) {
   const sizes = ['S', 'M', 'L', 'XL'];
   
@@ -55,7 +58,7 @@ function selectWristSize(size) {
   }
 }
 
-
+// Quantity Button
 const quantityElements = document.querySelectorAll('.quantity-button');
 
 for (let btn of quantityElements) {
@@ -68,3 +71,27 @@ for (let btn of quantityElements) {
     quantity.innerText = newQuantity;
   })
 }
+
+// ADD to Cart
+let cartCount = 0;
+document.getElementById('add-to-cart').addEventListener('click', function (event){
+  
+  const quantity = parseInt(document.getElementById('quantity').innerText);
+  
+  if (quantity > 0) {
+    const checkoutContainer = document.getElementById('checkout-container');
+    checkoutContainer.classList.remove('hidden');
+    checkoutContainer.classList.add('flex');
+
+    cartCount = cartCount + quantity;
+
+    document.getElementById('cart-count').innerText = cartCount;
+  }
+
+  else {
+    alert("Please select a quantity...")
+  }
+  
+});
+
+
